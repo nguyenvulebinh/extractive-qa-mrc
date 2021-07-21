@@ -1,23 +1,3 @@
----
-language: 
-- vi
-- vn
-- en
-tags:
-- question-answering
-- pytorch
-datasets:
-- squad
-license: mit
-pipeline_tag: question-answering 
-metrics:
-- squad
-widget:
-- text: "Bình là chuyên gia về gì ?"
-  context: "Bình Nguyễn là một người đam mê với lĩnh vực xử lý ngôn ngữ tự nhiên . Anh nhận chứng chỉ Google Developer Expert năm 2020"
-- text: "Bình được công nhận với danh hiệu gì ?"
-  context: "Bình Nguyễn là một người đam mê với lĩnh vực xử lý ngôn ngữ tự nhiên . Anh nhận chứng chỉ Google Developer Expert năm 2020"
----
 ## Model Description
 
 - Language model: [XLM-RoBERTa](https://huggingface.co/transformers/model_doc/xlmroberta.html)
@@ -86,7 +66,7 @@ print(answer)
 # answer: Google Developer Expert. Score start: 0.9926977753639221, Score end: 0.9909810423851013
 ```
 
-## Pre-trained model
+## Training model
 In data-bin/raw folder already exist some sample data files for the training process. Do following steps:
 
 - Create environment by using file requirements.txt
