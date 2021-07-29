@@ -161,8 +161,8 @@ def get_dataloader(train_path, valid_path, batch_size=2, num_proc=10):
 
     print("Train set: ", len(train_set))
     print("Valid set: ", len(valid_set))
-    # return train_set, valid_set
-    return train_set, valid_set.shard(500, 0)
+    return train_set, valid_set
+    #return train_set, valid_set.shard(500, 0)
     #
     # train_dataloader = DataLoader(
     #     train_set, shuffle=True, batch_size=batch_size, collate_fn=data_collator
