@@ -74,7 +74,7 @@ In data-bin/raw folder already exist some sample data files for the training pro
 - Clean data
 
 ```shell
-python mrc_anno_to_mrc.py
+python squad_to_mrc.py
 python train_valid_split.py
 ```
 - Train model
