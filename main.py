@@ -58,5 +58,4 @@ if __name__ == "__main__":
         compute_metrics=data_loader.compute_metrics
     )
 
-    # trainer.train('/home/nguyenbinh/sdb1/checkpoint/checkpoint-30506')
-    trainer.train('/home/nguyenbinh/sdb1/checkpoint/checkpoint-30506')
+    trainer.train()
