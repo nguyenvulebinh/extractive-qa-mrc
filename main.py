@@ -6,19 +6,19 @@ import numpy as np
 from datasets import load_metric
 import os
 
-os.environ["CUDA_VISIBLE_DEVICES"] = ""
+#os.environ["CUDA_VISIBLE_DEVICES"] = ""
 
 if __name__ == "__main__":
     # tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-base")
     model = MRCQuestionAnswering.from_pretrained("xlm-roberta-large",
                                                  cache_dir='./model-bin/cache',
-                                                 local_files_only=True)
+                                                 #local_files_only=True
+                                                )
     print(model)
     print(model.config)
 
     train_dataset, valid_dataset = data_loader.get_dataloader(
-        # train_path='./data-bin/processed/train.dataset',
-        train_path='./data-bin/processed/valid.dataset',
+        train_path='./data-bin/processed/train.dataset',
         valid_path='./data-bin/processed/valid.dataset'
     )
 
@@ -44,9 +44,9 @@ if __name__ == "__main__":
                                       metric_for_best_model='f1',
                                       load_best_model_at_end=True,
                                       save_total_limit=2,
-                                      eval_steps=1,
-                                      evaluation_strategy="steps",
-                                      # evaluation_strategy="epoch",
+                                      #eval_steps=1,
+                                      #evaluation_strategy="steps",
+                                      evaluation_strategy="epoch",
                                       )
 
     trainer = Trainer(
