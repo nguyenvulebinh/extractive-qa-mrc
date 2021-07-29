@@ -7,7 +7,8 @@ from nltk import word_tokenize
 
 tokenizer = AutoTokenizer.from_pretrained("xlm-roberta-large",
                                           cache_dir='./model-bin/cache',
-                                          local_files_only=True)
+                                          #local_files_only=True
+                                         )
 
 
 def compute_metrics(eval_pred):
