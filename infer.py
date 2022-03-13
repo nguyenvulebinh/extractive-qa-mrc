@@ -5,7 +5,7 @@ from nltk import word_tokenize
 from transformers.models.auto import MODEL_FOR_QUESTION_ANSWERING_MAPPING
 
 
-def tokenize_function(example):
+def tokenize_function(example, tokenizer):
     question_word = word_tokenize(example["question"])
     context_word = word_tokenize(example["context"])
 
@@ -32,7 +32,7 @@ def tokenize_function(example):
     }
 
 
-def data_collator(samples):
+def data_collator(samples, tokenizer):
     if len(samples) == 0:
         return {}
 
